@@ -1,4 +1,70 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.14.0
+Date: 26. 08. 2016
+  Features:
+    - Fixed multiplayer
+      1) Internal reliability and stability improvements.
+      2) Players don't have to wait for other clients to download and load the game.
+      3) Decreased network trafic.
+      4) It is possible to use menu and quit the game when connecting to the game.
+      5) Server doesn't stop/slow down the game when some client is too slow, stops communicating or saves the game longer than the server.
+      6) Players automatically quit game after 3 desyncs.
+      7) Download speed tweaks.
+    - Added /team command that messages all players from the same force.
+  Minor Features:
+    - When selecting inventory filters the filter is automatically set to the item in the cursor if any.
+  Changes:
+    - Disabled loading of saves before 0.11.0 version (You can use 0.11.22 to load older saves and re-save them).
+    - Removed the option to enable/disable latency hiding, it is always on on clients (and off on the server).
+  Bugfixes:
+    - Factorio shouldn't crash anymore when Direct3D device is lost due to locking screen or entering sleep mode.
+  Modding:
+    - Added support for equipment grids in cars, tanks, locomotives, and cargo wagons.
+    - Changed equipment grids to work as protoypes: defined and referenced by things that use them.
+    - Changed equipment and equipment grids to have categories that define what equipment can go in what equipment grid.
+  Scripting:
+    - Fixed game freeze when an error was thrown during the player left game event.
+    - Removed LuaItemStack::has_grid.
+    - Removed LuaItemPrototype::equipment_grid_size.
+    - Changed LauItemStack::grid to return nil if the item doesn't have a grid.
+    - Added LuaItemPrototype::equipment_grid.
+    - Added LuaEntity::grid read.
+    - Added Added LuaEquipmentGridPrototype.
+    - Added LuaEquipmentGrid::prototype read.
+    - Added LuaEquipmentPrototype::equipment_categories read.
+    - Added LauForce::unchart_chunk()
+---------------------------------------------------------------------------------------------------
+Version: 0.13.18
+Date: 25. 08. 2016
+  Changes:
+    - Changed train wait conditions to use standard boolean precedence for evaluation, instead of a simple left to right accumulative evaluation.
+  Balancing:
+    - Increased tank machine gun range to 20.
+  Bugfixes:
+    - Fixed console command warning not sticking through save-load. (https://forums.factorio.com/31132)
+    - Fixed that vehicle machine guns would show in the logistics request and inventory filter selections.
+    - Fixed crash when number animation variations of unit-spawner entity is reduced. (https://forums.factorio.com/31205)
+    - Fixed clearing blueprints didn't clear the label. (https://forums.factorio.com/28610)
+    - Fixed crash when removing entities that had active alerts. (https://forums.factorio.com/31247)
+    - Fixed that sending random garbage to the RCON port could crash Factorio. (https://forums.factorio.com/31185)
+    - Fixed GUI size issues with modded recipes that have a ton of effects. (https://forums.factorio.com/30654)
+    - Fixed script errors with tight spot level 5. (https://forums.factorio.com/29724)
+    - Fixed the market entity not migrating/handling removed items it was offering. (https://forums.factorio.com/30875)
+    - Fixed sound settings not applying when pressing escape. (https://forums.factorio.com/30319)
+    - Fixed a crash that would happen after changing UI scale with the inventory open. (https://forums.factorio.com/30983)
+    - Fixed deconstruction would reset the build rotation value. (https://forums.factorio.com/31466)
+    - Fixed copy-paste between inventory sizes applying the inventory restriction oddly. (https://forums.factorio.com/31473)
+    - fixed game.regenerate_entitiy() not working at all. (https://forums.factorio.com/31470)
+    - Fixed that it was possible to create an assembling machine with zero energy usage. (https://forums.factorio.com/31465)
+  Modding:
+    - Fixed crash when trying to connect wires to entities with 0 wire connection distance. (https://forums.factorio.com/31499)
+  Scripting:
+    - Fixed LuaSurface::map_gen_settings.shift not working. (https://forums.factorio.com/31143)
+    - Fixed chunk positions would get improperly rounded instead of floored. (https://forums.factorio.com/31092)
+    - Added LuaConstantCombinatorControlBehavior::enabled read/write.
+    - Added upper limit to resolution parameter of LuaGameScript::take_screenshot function. Limit for width and height is 16384.
+    - Added LuaStyle::visible read/write.
+---------------------------------------------------------------------------------------------------
 Version: 0.13.17
 Date: 17. 08. 2016
   Bugfixes:
