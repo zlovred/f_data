@@ -51,7 +51,7 @@ level =
     "inserter",
     "long-handed-inserter",
     "fast-inserter",
-    "filter-inserter",
+    "stack-filter-inserter",
     "red-wire",
     "green-wire",
     "wooden-chest",
@@ -95,7 +95,7 @@ end
 script.on_init(function()
   global.story = story_init(story_table)
   global.tightspot = tightspot_init(level)
-  game.always_day = true
+  game.players[1].surface.always_day = true
   game.players[1].force.disable_research()
 end)
 
