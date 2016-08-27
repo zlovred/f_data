@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.14.1
+Date: 26. 08. 2016
+  Bugfixes:
+    - Fixed that exiting hosting game could stuck Factorio forever.
+    - Possible fix game not showing in browse game list. (If it happens anyway, we will have more info)
+    - Fixed that a very big number of biters on a map could cause very significant UPS drop. (https://forums.factorio.com/31278)
+---------------------------------------------------------------------------------------------------
 Version: 0.14.0
 Date: 26. 08. 2016
   Features:
@@ -33,6 +40,15 @@ Date: 26. 08. 2016
     - Added LuaEquipmentGrid::prototype read.
     - Added LuaEquipmentPrototype::equipment_categories read.
     - Added LauForce::unchart_chunk()
+---------------------------------------------------------------------------------------------------
+Version: 0.13.19
+Date: ????
+  Bugfixes:
+    - Fixed that the Golem, Watch your step and doing it right didn't activate from steam cloud on new factorio installation.
+    - Fixed selection boxes of trains in specific situations. (https://forums.factorio.com/31065)
+    - Fixed that unclosable character window was opened when it was ordered to open exactly at the same tick when the character died. (https://forums.factorio.com/viewtopic.php?30946)
+  Scripting:
+    - Added LauSurface::regenerate_entity(...)
 ---------------------------------------------------------------------------------------------------
 Version: 0.13.18
 Date: 25. 08. 2016
